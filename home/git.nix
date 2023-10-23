@@ -1,0 +1,9 @@
+{
+  config,
+  plugins,
+  ...
+}: {
+  pass
+}
+
+
