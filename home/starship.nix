@@ -4,5 +4,5 @@
   user,
   ...
 }: {
-
+  programs.starship.enable = true;
 }

@@ -49,8 +49,9 @@
       withOpenASAR = true;
       withVencord = true;
     })
+    ckan
     firefox
-    google-chrome
+    google-chrome-beta
     thunderbird
     wget
     gnome.gnome-calendar
@@ -70,8 +71,8 @@
     # Creative
     obs-studio
     blender
-    
-    # audio 
+
+    # audio
     pavucontrol
     # Customization
     # Misc
@@ -88,19 +89,20 @@
     eww-tray.packages.${pkgs.system}.eww-wayland
     cups-filters
 
-    # School 
-
+    # School
 
     # Programming
-    (python3.withPackages (ps: with ps; [
-      pandas 
-      matplotlib 
-      requests
-      rich
-      nextcord
-      gst-python
-      python-dotenv]))
-      nodejs
+    (python3.withPackages (ps:
+      with ps; [
+        pandas
+        matplotlib
+        requests
+        rich
+        nextcord
+        gst-python
+        python-dotenv
+      ]))
+    nodejs
     newt
     ripgrep
     docker-client

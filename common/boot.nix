@@ -4,7 +4,15 @@
   ...
 }: {
   boot = {
+    plymouth = {
+      enable = true;
+      theme = "bgrt";
+    };
+    initrd = {
+      verbose = false;
+    };
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [ "quiet" "udev.log_level=0" ];
     supportedFilesystems = ["ntfs"];
     loader = {
       systemd-boot.enable = false;
