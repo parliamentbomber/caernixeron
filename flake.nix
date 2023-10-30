@@ -24,7 +24,6 @@
     eww-tray = {
       url = "github:ralismark/eww/tray-3";
       inputs.nixpkgs.follows = "nixpkgs";
-    
     };
   };
 

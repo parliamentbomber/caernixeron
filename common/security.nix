@@ -2,12 +2,10 @@
   security = {
     doas = {
       enable = true;
-      extraRules = [
-        {
-          users = ["nixer"];
-          keepEnv = true;
-        }
-      ];
+      extraRules = [{
+        users = ["nixer"];
+        keepEnv = true;
+      }];
     };
     rtkit.enable = true;
     polkit.enable = true;

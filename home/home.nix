@@ -18,6 +18,5 @@
   };
   imports = [
     ./gtk.nix
-    ./starship.nix
   ];
 }
