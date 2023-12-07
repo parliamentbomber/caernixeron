@@ -25,6 +25,9 @@
       url = "github:ralismark/eww/tray-3";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    prismlauncher = {
+      url = "github:prismlauncher/prismlauncher";
+    };
   };
 
   outputs = {
@@ -35,6 +38,7 @@
     anyrun,
     home-manager,
     watershot,
+    prismlauncher,
     ...
   } @ inputs: {
     nixosConfigurations = {

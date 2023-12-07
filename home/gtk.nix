@@ -29,8 +29,9 @@
       size = 22;
     };
     theme = {
-      name = "gruvbox-but-good";
+      name = "Gruvbox-Dark-BL";
+      package = pkgs.gruvbox-gtk-theme;
     };
   };
-  home.sessionVariables.GTK_THEME = "gruvbox-but-good";
+  home.sessionVariables.GTK_THEME = "Gruvbox-Dark-BL";
 }

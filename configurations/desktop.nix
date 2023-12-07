@@ -54,7 +54,7 @@
     modesetting.enable = true;
     open = false;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
   };
 
   # you probably shouldn't change this, but if you want to please read the documentation first
