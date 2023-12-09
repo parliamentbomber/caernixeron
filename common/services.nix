@@ -6,6 +6,7 @@
   services = {
     devmon.enable = true;
     gvfs.enable = true;
+    tailscale.enable = true;
     dbus.enable = true;
     flatpak.enable = true;
     ratbagd.enable = true;

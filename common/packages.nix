@@ -12,6 +12,7 @@
   environment.systemPackages = with pkgs; [
     # Hyprland Requirements
     swayosd
+    gtklock
     scrcpy
     grim
     gvfs
