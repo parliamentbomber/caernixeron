@@ -2,7 +2,6 @@
   config,
   inputs,
   pkgs,
-
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -72,10 +71,10 @@
     blender
     steam-run
 
-    #fonts 
+    #fonts
     monaspace
-    
-    # audio 
+
+    # audio
     pavucontrol
     # Customization
     # Misc
@@ -93,19 +92,20 @@
     inputs.prismlauncher.packages.${pkgs.system}.default
     cups-filters
 
-    # School 
-
+    # School
 
     # Programming
-    (python3.withPackages (ps: with ps; [
-      pandas 
-      matplotlib 
-      requests
-      rich
-      nextcord
-      gst-python
-      python-dotenv]))
-      nodejs
+    (python3.withPackages (ps:
+      with ps; [
+        pandas
+        matplotlib
+        requests
+        rich
+        nextcord
+        gst-python
+        python-dotenv
+      ]))
+    nodejs
     newt
     ripgrep
     docker-client

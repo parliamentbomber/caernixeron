@@ -3,7 +3,4 @@
   plugins,
   ...
 }: {
-  pass
 }
-
-

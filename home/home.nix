@@ -14,7 +14,7 @@
   xdg = {
     desktopEntries = {
       ckan = {
-        name="ckan";
+        name = "ckan";
         genericName = "ckan";
         exec = "ckan %U";
         terminal = false;

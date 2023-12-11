@@ -18,7 +18,7 @@
     };
   };
   home.pointerCursor = {
-    name="macOS-Monterey";
+    name = "macOS-Monterey";
     size = 22;
     package = pkgs.apple-cursor;
     gtk.enable = true;

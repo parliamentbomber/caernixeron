@@ -6,7 +6,6 @@
   pkgs,
   ...
 }: {
-  
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -27,7 +26,6 @@
       size = 8 * 1024;
     }
   ];
-
 
   # env variables
   environment.sessionVariables = {
