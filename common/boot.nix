@@ -5,6 +5,7 @@
 }: {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelModules = ["kvm-intel"];
     supportedFilesystems = ["ntfs"];
     loader = {
       systemd-boot.enable = false;

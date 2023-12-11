@@ -6,7 +6,7 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
 
   # networking, firewall, and hostname
@@ -43,7 +43,6 @@
       size = 12 * 2048;
     }
   ];
-
   # you probably shouldn't change this, but if you want to please read the documentation first
   system.stateVersion = "23.05";
 }

@@ -17,16 +17,16 @@
       };
     };
   };
-
+  home.pointerCursor = {
+    name="macOS-Monterey";
+    size = 22;
+    package = pkgs.apple-cursor;
+    gtk.enable = true;
+  };
   gtk = {
     enable = true;
     font = {
       name = "Torus";
-    };
-    cursorTheme = {
-      package = pkgs.apple-cursor;
-      name = "macOS-Monterey";
-      size = 22;
     };
     theme = {
       name = "Gruvbox-Dark-BL";

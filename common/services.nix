@@ -10,13 +10,12 @@
     dbus.enable = true;
     flatpak.enable = true;
     ratbagd.enable = true;
-    gnome.gnome-keyring.enable = true;
+    gnome3.gnome-keyring.enable = true;
     printing = {
       enable = true;
       logLevel = "debug";
       drivers = [
         pkgs.cups-kyodialog
-        pkgs.foomatic-db-ppds-withNonfreeDb
       ];
     };
     avahi = {
@@ -26,7 +25,10 @@
     };
     xserver = {
       enable = true;
-      displayManager.gdm.enable = true;
+      displayManager.sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
       layout = "";
       xkbVariant = "";
     };

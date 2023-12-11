@@ -28,55 +28,58 @@
     prismlauncher = {
       url = "github:prismlauncher/prismlauncher";
     };
+    spicetify-nix = {
+      url = "github:the-argus/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
-    hyprland,
-    eww-tray,
     anyrun,
-    home-manager,
-    watershot,
     prismlauncher,
+    eww-tray,
+    home-manager,
     ...
   } @ inputs: {
     nixosConfigurations = {
       # Run the following command in the flake's directory to
       # deploy this configuration on any NixOS system:
       #   sudo nixos-rebuild switch --flake .#nixos-test
-      "nixerpc" = nixpkgs.lib.nixosSystem {
+      "eeloo" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = inputs;
+        specialArgs = {inherit inputs;};
         modules = [
-          ./configurations/desktop.nix
+          ./configurations/eeloo/default.nix
           ./common
-          home-manager.nixosModules.home-manager
+          inputs.home-manager.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = {inherit inputs;};
             home-manager.users.nixer = import ./home/home.nix;
           }
-          hyprland.nixosModules.default
+          inputs.hyprland.nixosModules.default
           {
             programs.hyprland.enable = true;
             programs.hyprland.xwayland.enable = true;
           }
         ];
       };
-      "nixerlaptop" = nixpkgs.lib.nixosSystem {
+      "minmus" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = inputs;
+        specialArgs = {inherit inputs;};
         modules = [
-          ./configurations/laptop.nix
+          ./configurations/minmus/default.nix
           ./common
-          home-manager.nixosModules.home-manager
+          inputs.home-manager.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.nixer = import ./home/home.nix;
           }
-          hyprland.nixosModules.default
+          inputs.hyprland.nixosModules.default
           {
             programs.hyprland.enable = true;
             programs.hyprland.xwayland.enable = true;

@@ -2,10 +2,7 @@
   config,
   inputs,
   pkgs,
-  anyrun,
-  watershot,
-  eww-tray,
-  prismlauncher,
+
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -67,11 +64,16 @@
     ffmpeg
     mpv
     spotify
+    ckan
     imv
 
     # Creative
     obs-studio
     blender
+    steam-run
+
+    #fonts 
+    monaspace
     
     # audio 
     pavucontrol
@@ -85,10 +87,10 @@
     networkmanagerapplet
     piper
     virt-manager
-    anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
-    watershot.packages.${pkgs.system}.default
-    eww-tray.packages.${pkgs.system}.eww-wayland
-    prismlauncher.packages.${pkgs.system}.default
+    inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
+    inputs.watershot.packages.${pkgs.system}.default
+    inputs.eww-tray.packages.${pkgs.system}.eww-wayland
+    inputs.prismlauncher.packages.${pkgs.system}.default
     cups-filters
 
     # School 
@@ -117,6 +119,7 @@
     clang
   ];
   programs = {
+    nix-ld.enable = true;
     steam = {
       enable = true;
     };

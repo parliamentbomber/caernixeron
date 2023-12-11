@@ -1,17 +1,21 @@
 # desktop specific nixos options
 {
   config,
+  lib,
+  nixpkgs,
   pkgs,
   ...
 }: {
+  
   imports = [
     # Include the results of the hardware scan.
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
+    ../../modules/os/nvidia.nix
   ];
 
   # networking, firewall, and hostname
   networking = {
-    hostName = "nixerpc";
+    hostName = "eeloo";
     networkmanager.enable = true;
     firewall.enable = true;
   };
