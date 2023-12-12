@@ -11,7 +11,7 @@
 
   # networking, firewall, and hostname
   networking = {
-    hostName = "nixerlaptop";
+    hostName = "minmus";
     networkmanager.enable = true;
     firewall = {
       enable = true;

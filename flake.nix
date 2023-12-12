@@ -5,6 +5,9 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+    };
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,9 +40,6 @@
   outputs = {
     self,
     nixpkgs,
-    anyrun,
-    prismlauncher,
-    eww-tray,
     home-manager,
     ...
   } @ inputs: {
