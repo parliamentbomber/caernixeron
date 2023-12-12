@@ -10,7 +10,7 @@
     dbus.enable = true;
     flatpak.enable = true;
     ratbagd.enable = true;
-    gnome3.gnome-keyring.enable = true;
+    gnome.gnome-keyring.enable = true;
     printing = {
       enable = true;
       logLevel = "debug";
