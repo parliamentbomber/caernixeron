@@ -91,7 +91,7 @@
     inputs.eww-tray.packages.${pkgs.system}.eww-wayland
     inputs.prismlauncher.packages.${pkgs.system}.default
     inputs.nix-gaming.packages.${pkgs.system}.wine-discord-ipc-bridge
-    
+
     cups-filters
 
     # School

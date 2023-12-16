@@ -1,10 +1,10 @@
 {
   config,
-    pkgs,
-    self,
-    user,
-    inputs,
-    ...
+  pkgs,
+  self,
+  user,
+  inputs,
+  ...
 }: {
   home = {
     username = "nixer";
@@ -28,9 +28,11 @@
   };
   imports = [
     inputs.spicetify-nix.homeManagerModule
+    inputs.anyrun.homeManagerModules.default
     ./gtk.nix
     ./vscode.nix
     ./spicetify.nix
     ./starship.nix
-    ];
+    ./anyrun.nix
+  ];
 }

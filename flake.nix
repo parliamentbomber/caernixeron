@@ -35,6 +35,9 @@
       url = "github:the-argus/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    anyrun-nixos-options = {
+      url = "github:n3oney/anyrun-nixos-options";
+    };
   };
 
   outputs = {
@@ -77,6 +80,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = {inherit inputs;};
             home-manager.users.nixer = import ./home/home.nix;
           }
           inputs.hyprland.nixosModules.default
