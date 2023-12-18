@@ -6,11 +6,11 @@
 }: {
   # themable spotify
   programs.spicetify = let
-    spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
+    spicetify-extensions = inputs.spicetify-nix.packages.${pkgs.system}.default;
   in {
     enable = true;
 
-    enabledExtensions = with spicePkgs.extensions; [
+    enabledExtensions = with spicetify-extensions.extensions; [
       adblock
     ];
   };

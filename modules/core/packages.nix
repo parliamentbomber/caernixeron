@@ -122,7 +122,6 @@
     pyright
     nodejs
     clang
-    appimage-run
   ];
   programs = {
     nix-ld.enable = true;

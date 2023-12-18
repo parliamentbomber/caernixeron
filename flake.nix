@@ -38,6 +38,9 @@
     anyrun-nixos-options = {
       url = "github:n3oney/anyrun-nixos-options";
     };
+    shadower = {
+      url = "github:n3oney/shadower";
+    };
   };
 
   outputs = {
@@ -55,7 +58,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./configurations/eeloo/default.nix
-          ./common
+          ./modules/core
           inputs.home-manager.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;
@@ -75,7 +78,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./configurations/minmus/default.nix
-          ./common
+          ./modules/core
           inputs.home-manager.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;

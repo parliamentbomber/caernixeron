@@ -4,7 +4,7 @@
   ...
 }: {
   powerManagement = {
-    cpuFreqGovernor = "powersave";
+    cpuFreqGovernor = "performance";
   };
 
   sound = {

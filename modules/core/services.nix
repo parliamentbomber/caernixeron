@@ -10,6 +10,15 @@
     dbus.enable = true;
     flatpak.enable = true;
     ratbagd.enable = true;
+    greetd = {
+      enable = true;
+      restart = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd dbus-run-session Hyprland'";
+        };
+      };      
+    };
     gnome.gnome-keyring.enable = true;
     printing = {
       enable = true;
@@ -23,15 +32,6 @@
       nssmdns4 = true;
       openFirewall = true;
     };
-    xserver = {
-      enable = true;
-      displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-      };
-      layout = "";
-      xkbVariant = "";
-    };
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -40,7 +40,7 @@
       jack.enable = true;
     };
     logind = {
-      extraConfig = "HandlePowerKey=ignore";
+      extraConfig = "HandlePowerKey=ignore\n HandlePowerKeyLongPress=ignore";
     };
   };
   hardware.bluetooth.enable = true;
