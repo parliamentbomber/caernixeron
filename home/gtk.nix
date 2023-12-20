@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  home-manager,
   ...
 }: {
   home.packages = with pkgs; [

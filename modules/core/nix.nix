@@ -5,6 +5,7 @@
       allowed-users = ["@wheel" "nixer"];
       auto-optimise-store = true;
       substituters = [
+        "https://cache.nixos.org"
         "https://anyrun.cachix.org"
         "https://hyprland.cachix.org"
         "https://cache.garnix.io"

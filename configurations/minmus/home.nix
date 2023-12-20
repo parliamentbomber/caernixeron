@@ -9,7 +9,7 @@
   home = {
     username = "nixer";
     homeDirectory = "/home/nixer";
-    stateVersion = "23.05";
+    stateVersion = "23.11";
   };
   xdg = {
     desktopEntries = {
