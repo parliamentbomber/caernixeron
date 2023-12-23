@@ -65,7 +65,7 @@
         system = "x86_64-linux";
         modules = [
           ./configurations/eeloo
-          ./modules/core
+          ./system/core
           inputs.home-manager.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;
@@ -85,19 +85,20 @@
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
+          ./configurations/minmus
+          ./system/core
           inputs.home-manager.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = {inherit inputs;};
+            home-manager.users.nixer = import ./home;
           }
           inputs.hyprland.nixosModules.default
           {
             programs.hyprland.enable = true;
             programs.hyprland.xwayland.enable = true;
           }
-          ./configurations/minmus
-          ./modules/core
         ];
       };
     };

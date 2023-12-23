@@ -9,7 +9,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../modules/novideo
+    ../../system/novideo
   ];
 
   # networking, firewall, and hostname
