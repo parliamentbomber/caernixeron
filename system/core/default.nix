@@ -12,5 +12,6 @@
     ./systemd.nix
     ./users.nix
     ./virtualisation.nix
+    ./ssh.nix
   ];
 }
