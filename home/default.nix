@@ -11,6 +11,7 @@
     ./spicetify.nix
     ./starship.nix
     ./anyrun.nix
+    ./git.nix
   ];
   home.stateVersion = "23.11";
 }
