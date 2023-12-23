@@ -9,7 +9,6 @@
     spicetify-extensions = inputs.spicetify-nix.packages.${pkgs.system}.default;
   in {
     enable = true;
-
     enabledExtensions = with spicetify-extensions.extensions; [
       adblock
     ];

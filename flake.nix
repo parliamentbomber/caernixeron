@@ -5,9 +5,6 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable"; # bleeding edge all the way gang
     };
-    nix-gaming = {
-      url = "github:fufexan/nix-gaming";
-    };
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,6 +14,7 @@
     };
     home-manager = {
       url = "github:nix-community/home-manager/";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     watershot = {
       url = "github:kirottu/watershot";
@@ -37,6 +35,17 @@
     shadower = {
       url = "github:n3oney/shadower";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nh = {
+      url = "github:viperml/nh";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixpkgs-wayland = {
+      url = "github:nix-community/nixpkgs-wayland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote";
     };
   };
 
@@ -68,6 +77,7 @@
             programs.hyprland.enable = true;
             programs.hyprland.xwayland.enable = true;
           }
+          inputs.lanzaboote.nixosModules.lanzaboote
         ];
       };
       "minmus" = nixpkgs.lib.nixosSystem {

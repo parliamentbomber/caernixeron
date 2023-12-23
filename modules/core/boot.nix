@@ -1,21 +1,21 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = ["kvm-intel"];
+    kernelParams = ["nvidia_drm.modeset=1"];
     supportedFilesystems = ["ntfs"];
     loader = {
-      systemd-boot.enable = false;
+      systemd-boot.enable = lib.mkForce false;
       efi.canTouchEfiVariables = true;
-      grub = {
-        enable = true;
-        devices = ["nodev"];
-        efiSupport = true;
-        useOSProber = true;
-      };
+    };
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/etc/secureboot";
     };
   };
 }

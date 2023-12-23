@@ -37,7 +37,6 @@
       };
     in ''
         Config(
-            min_score: 1,
             options: ${options},
         )
     '';

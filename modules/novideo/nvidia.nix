@@ -12,11 +12,6 @@
     WLR_NO_HARDWARE_CURSORS = "1";
     __GL_THREADED_OPTIMIZATIONS = "0";
   };
-  environment.systemPackages = with pkgs; [
-    vulkan-loader
-    vulkan-validation-layers
-    vulkan-tools
-  ];
 
   hardware = {
     nvidia = {
@@ -32,6 +27,8 @@
       driSupport32Bit = true;
       extraPackages = with pkgs; [
         vaapiVdpau
+        libvdpau-va-gl
+        vulkan-validation-layers
       ];
     };
   };

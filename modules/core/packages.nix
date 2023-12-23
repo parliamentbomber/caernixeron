@@ -38,11 +38,9 @@
     gnome3.gnome-control-center
     gnome3.gnome-settings-daemon
     cliphist
-    swappy
     swayidle
     tealdeer
     brightnessctl
-    pfetch
     neofetch
     # Internet
     (pkgs.discord.override {
@@ -93,7 +91,9 @@
     inputs.watershot.packages.${pkgs.system}.default
     inputs.eww-tray.packages.${pkgs.system}.eww-wayland
     inputs.prismlauncher.packages.${pkgs.system}.default
-    inputs.nix-gaming.packages.${pkgs.system}.wine-discord-ipc-bridge
+    inputs.nh.packages.${pkgs.system}.default
+    inputs.lanzaboote.packages.${pkgs.system}.lzbt
+    inputs.lanzaboote.packages.${pkgs.system}.stub
 
     cups-filters
 
