@@ -28,6 +28,5 @@
   };
   imports = [
     ../../home/default.nix
-
   ];
 }

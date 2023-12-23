@@ -55,6 +55,7 @@
     home-manager,
     ...
   } @ inputs: {
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     nixosConfigurations = {
       # Run the following command in the flake's directory to
       # deploy this configuration on any NixOS system:
@@ -84,7 +85,6 @@
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
- 
           inputs.home-manager.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;

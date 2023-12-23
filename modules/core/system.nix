@@ -1,7 +1,7 @@
 {
   pkgs,
-    lib,
-    ...
+  lib,
+  ...
 }: {
   services = {
     udev.packages = with pkgs; [gnome.gnome-settings-daemon];

@@ -18,7 +18,6 @@
         randr
         dictionary
         inputs.anyrun-nixos-options.packages.${pkgs.system}.default
-
       ];
 
       width.fraction = 0.3;
@@ -36,9 +35,9 @@
         ":nall" = [nixos-options hm-options];
       };
     in ''
-        Config(
-            options: ${options},
-        )
+      Config(
+          options: ${options},
+      )
     '';
     extraCss = ''
       * {

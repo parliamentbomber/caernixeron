@@ -3,7 +3,6 @@
   inputs,
   ...
 }: {
-
   imports = [
     inputs.spicetify-nix.homeManagerModule
     inputs.anyrun.homeManagerModules.default

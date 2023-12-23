@@ -4,8 +4,8 @@
   pkgs,
   ...
 }: {
-    nixpkgs.config.allowUnfree = true;
-    environment.systemPackages = with pkgs; [
+  nixpkgs.config.allowUnfree = true;
+  environment.systemPackages = with pkgs; [
     # Hyprland Requirements
     handbrake
     swayosd
