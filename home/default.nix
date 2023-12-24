@@ -12,6 +12,7 @@
     ./starship.nix
     ./anyrun.nix
     ./git.nix
+    ./zsh.nix
   ];
   home.stateVersion = "23.11";
 }

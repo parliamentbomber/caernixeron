@@ -27,7 +27,7 @@
       url = "github:prismlauncher/prismlauncher";
     };
     spicetify-nix = {
-      url = "github:the-argus/spicetify-nix";
+      url = "github:exellentcoin26/spicetify-nix";
     };
     anyrun-nixos-options = {
       url = "github:n3oney/anyrun-nixos-options";
