@@ -86,7 +86,6 @@
     killall
     networkmanagerapplet
     piper
-    virt-manager
     inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
     inputs.watershot.packages.${pkgs.system}.default
     inputs.eww-tray.packages.${pkgs.system}.eww-wayland
@@ -116,7 +115,6 @@
     docker-client
     cargo
     gcc
-    qemu
     gopls
     pyright
     nodejs
