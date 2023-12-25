@@ -5,9 +5,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    bibata-cursors
     dconf
-    apple-cursor
   ];
 
   dconf = {

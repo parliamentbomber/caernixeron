@@ -48,7 +48,6 @@
       withVencord = true;
     })
     webcord-vencord
-    firefox
     google-chrome
     thunderbird
     wget
