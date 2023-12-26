@@ -16,6 +16,7 @@
     ./mime.nix
     ./audio
     ./swayidle.nix
+    ./waybar
   ];
   home.stateVersion = "23.11";
 }

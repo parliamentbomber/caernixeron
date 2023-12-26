@@ -18,7 +18,7 @@ in {
     enable = true;
     timeouts = [
       {
-        timeout = 310;
+        timeout = 120;
         command = suspendScript.outPath;
       }
     ];
