@@ -5,7 +5,10 @@
 }: {
   services = {
     devmon.enable = true;
-    xserver.displayManager.gdm.enable = true;
+    xserver = {
+      enable = true;
+      displayManager.gdm.enable = true;
+    };
     gvfs.enable = true;
     tailscale.enable = true;
     dbus.enable = true;

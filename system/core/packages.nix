@@ -8,37 +8,14 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # Hyprland Requirements
-    handbrake
-    gtklock
-    scrcpy
-    grim
-    gvfs
-    kitty
     virt-manager
     qemu
-    greetd.tuigreet
-    libnotify
-    kooha
     playerctl
     polkit
     polkit_gnome
-    slurp
-    swaylock-effects
-    swww
-    udisks
-    wireplumber
-    wlogout
-    wl-clipboard
     xdg-user-dirs
-    dunst
-    element-desktop-wayland
     gruvbox-dark-gtk
-    jq
-    socat
-    gnome3.gnome-control-center
-    gnome3.gnome-settings-daemon
     tealdeer
-    brightnessctl
     neofetch
     # Internet
     (pkgs.discord.override {
@@ -47,7 +24,6 @@
     })
     webcord-vencord
     google-chrome
-    thunderbird
     wget
     gnome.gnome-calendar
     microsoft-edge-dev
@@ -78,19 +54,10 @@
     git
     gnome.nautilus
     htop
-    keepassxc
-    killall
     networkmanagerapplet
-    piper
-    inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
-    inputs.watershot.packages.${pkgs.system}.default
-    inputs.eww-tray.packages.${pkgs.system}.eww-wayland
-    inputs.prismlauncher.packages.${pkgs.system}.default
     inputs.nh.packages.${pkgs.system}.default
     inputs.lanzaboote.packages.${pkgs.system}.lzbt
     inputs.lanzaboote.packages.${pkgs.system}.stub
-    inputs.arrpc.packages.${pkgs.system}.arrpc
-
     cups-filters
 
     # School

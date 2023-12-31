@@ -23,6 +23,7 @@
     ./wlsunset
     ./swayosd
     ./udiskie
+    ./wayland
   ];
   home.stateVersion = "23.11";
 }

@@ -9,12 +9,12 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    arrpc = {
-      url = "github:notashelf/arrpc-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     hyprland = {
       url = "github:hyprwm/Hyprland";
+    };
+    hyprcontrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager/";
@@ -53,6 +53,9 @@
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
     };
+    hyprpicker = {
+      url = "github:hyprwm/hyprpicker";
+    };
   };
 
   outputs = {
@@ -80,10 +83,6 @@
             home-manager.users.nixer = import ./home;
           }
           inputs.hyprland.nixosModules.default
-          {
-            programs.hyprland.enable = true;
-            programs.hyprland.xwayland.enable = true;
-          }
           inputs.lanzaboote.nixosModules.lanzaboote
         ];
       };
@@ -99,11 +98,6 @@
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = {inherit inputs;};
             home-manager.users.nixer = import ./home;
-          }
-          inputs.hyprland.nixosModules.default
-          {
-            programs.hyprland.enable = true;
-            programs.hyprland.xwayland.enable = true;
           }
         ];
       };

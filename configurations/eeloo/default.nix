@@ -11,6 +11,7 @@
     ./hardware-configuration.nix
     ../../system/novideo
     ../../system/gaming
+    ../../system/wayland
   ];
 
   # networking, firewall, and hostname
