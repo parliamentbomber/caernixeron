@@ -1,6 +1,7 @@
 {
   config,
   inputs,
+  pkgs,
   ...
 }: {
   imports = [
@@ -17,6 +18,11 @@
     ./audio
     ./swayidle.nix
     ./waybar
+    ./wlogout
+    ./cliphist
+    ./wlsunset
+    ./swayosd
+    ./udiskie
   ];
   home.stateVersion = "23.11";
 }

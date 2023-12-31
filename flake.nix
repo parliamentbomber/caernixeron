@@ -9,6 +9,10 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    arrpc = {
+      url = "github:notashelf/arrpc-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland = {
       url = "github:hyprwm/Hyprland";
     };
@@ -34,7 +38,6 @@
     };
     shadower = {
       url = "github:n3oney/shadower";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     nh = {
       url = "github:viperml/nh";
@@ -46,6 +49,9 @@
     };
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
+    };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
     };
   };
 

@@ -8,12 +8,13 @@
   environment.systemPackages = with pkgs; [
     # Hyprland Requirements
     handbrake
-    swayosd
     gtklock
     scrcpy
     grim
     gvfs
     kitty
+    virt-manager
+    qemu
     greetd.tuigreet
     libnotify
     kooha
@@ -23,11 +24,9 @@
     slurp
     swaylock-effects
     swww
-    udiskie
     udisks
     wireplumber
     wlogout
-    wlsunset
     wl-clipboard
     xdg-user-dirs
     dunst
@@ -37,8 +36,6 @@
     socat
     gnome3.gnome-control-center
     gnome3.gnome-settings-daemon
-    cliphist
-    swayidle
     tealdeer
     brightnessctl
     neofetch
@@ -92,6 +89,7 @@
     inputs.nh.packages.${pkgs.system}.default
     inputs.lanzaboote.packages.${pkgs.system}.lzbt
     inputs.lanzaboote.packages.${pkgs.system}.stub
+    inputs.arrpc.packages.${pkgs.system}.arrpc
 
     cups-filters
 
