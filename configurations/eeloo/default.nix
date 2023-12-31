@@ -10,6 +10,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../system/novideo
+    ../../system/gaming
   ];
 
   # networking, firewall, and hostname

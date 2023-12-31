@@ -2,6 +2,7 @@
   config,
   inputs,
   pkgs,
+  lib,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -60,7 +61,6 @@
     ffmpeg
     mpv
     spotify
-    ckan
     imv
 
     # Creative
@@ -119,9 +119,6 @@
   ];
   programs = {
     nix-ld.enable = true;
-    steam = {
-      enable = true;
-    };
     zsh = {
       enable = true;
     };
@@ -140,7 +137,7 @@
       };
     };
     kdeconnect = {
-      enable = true;
+      enable = lib.mkDefault true;
     };
   };
 }
