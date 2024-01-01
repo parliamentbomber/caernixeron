@@ -4,13 +4,7 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ../core/ssh.nix
-    ../core/security.nix
-    ../core/users.nix
-    ../core/nix.nix
-    ../core/misc.nix
-  ];
+
   networking = {
     nat = {
       enable = true;
