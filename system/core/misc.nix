@@ -3,10 +3,6 @@
   pkgs,
   ...
 }: {
-  powerManagement = {
-    cpuFreqGovernor = "performance";
-  };
-
   sound = {
     enable = true;
   };

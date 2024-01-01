@@ -27,6 +27,7 @@
     swww
     grim
     slurp
+    networkmanagerapplet
   ];
   imports = [
     ./hyprland

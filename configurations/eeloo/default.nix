@@ -1,8 +1,6 @@
 # desktop specific nixos options
 {
   config,
-  lib,
-  nixpkgs,
   pkgs,
   ...
 }: {
@@ -13,7 +11,9 @@
     ../../system/gaming
     ../../system/wayland
   ];
-
+  powerManagement = {
+    cpuFreqGovernor = "performance";
+  };
   # networking, firewall, and hostname
   networking = {
     hostName = "eeloo";
