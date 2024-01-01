@@ -99,7 +99,6 @@
     gnupg = {
       agent = {
         enable = true;
-        enableSSHSupport = true;
         enableExtraSocket = true;
         pinentryFlavor = "gnome3";
       };

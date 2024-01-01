@@ -99,6 +99,8 @@
             home-manager.extraSpecialArgs = {inherit inputs;};
             home-manager.users.nixer = import ./home;
           }
+          inputs.hyprland.nixosModules.default
+          inputs.lanzaboote.nixosModules.lanzaboote
         ];
       };
     };

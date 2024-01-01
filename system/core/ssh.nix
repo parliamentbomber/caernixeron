@@ -63,6 +63,6 @@
   };
   programs.ssh = {
     startAgent = true;
-    pubkeyAcceptedKeyTypes = "ssh-ed25519";
+    pubkeyAcceptedKeyTypes = ["ssh-ed25519"];
   };
 }

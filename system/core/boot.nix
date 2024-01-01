@@ -1,9 +1,15 @@
 {
   config,
   pkgs,
+  inputs,
   lib,
   ...
 }: {
+  environment.systemPackages = [
+    inputs.nh.packages.${pkgs.system}.default
+    inputs.lanzaboote.packages.${pkgs.system}.lzbt
+    inputs.lanzaboote.packages.${pkgs.system}.stub
+  ];
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = ["kvm-intel"];
