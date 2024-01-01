@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  inports = [
+  imports = [
     ../core/ssh.nix
     ../core/security.nix
     ../core/users.nix
