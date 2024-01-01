@@ -15,7 +15,7 @@
     nat = {
       enable = true;
       externalInterface = "eth0";
-      internalinterfaces = ["wg0"];
+      internalInterfaces = ["wg0"];
     };
     firewall = {
       allowedUDPPorts = [51820];
