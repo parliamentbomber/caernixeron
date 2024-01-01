@@ -8,6 +8,13 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./networking.nix
+    ../../system/server
+    ../../system/core/i18n.nix
+    ../../system/core/ssh.nix
+    ../../system/core/security.nix
+    ../../system/core/users.nix
+    ../../system/core/nix.nix
+
   ];
 
   boot.cleanTmpDir = true;
