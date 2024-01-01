@@ -1,0 +1,5 @@
+{config, ...}: {
+  imports = [
+    ./easyeffects.nix
+  ];
+}
