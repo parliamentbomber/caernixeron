@@ -107,7 +107,6 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./configurations/tylo
-          ./system/server
         ];
       };
     };
