@@ -61,4 +61,8 @@
       "192.168.0.0/16"
     ];
   };
+  programs.ssh = {
+    startAgent = true;
+    pubkeyAcceptedKeyTypes = "ssh-ed25519";
+  };
 }

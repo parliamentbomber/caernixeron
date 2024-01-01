@@ -9,6 +9,7 @@
     inputs.anyrun.homeManagerModules.default
     ./gtk.nix
     ./vscode.nix
+    ./packages.nix
     ./spicetify.nix
     ./starship.nix
     ./anyrun.nix
