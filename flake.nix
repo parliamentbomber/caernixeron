@@ -74,6 +74,7 @@
         system = "x86_64-linux";
         modules = [
           ./configurations/eeloo
+          ./system/core
           inputs.home-manager.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;

@@ -4,7 +4,6 @@
   pkgs,
   ...
 }: {
-
   networking = {
     nat = {
       enable = true;
