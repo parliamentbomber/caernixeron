@@ -19,7 +19,7 @@
     hostName = "eeloo";
     networkmanager.enable = true;
     firewall.enable = true;
-    enableIPv6=false;
+    enableIPv6 = false;
   };
   # swap
   swapDevices = [

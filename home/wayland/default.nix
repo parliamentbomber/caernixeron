@@ -31,5 +31,12 @@
   ];
   imports = [
     ./hyprland
+    ./wlsunset
+    ./wlogout
+    ./waybar
+    ./swayosd
+    ./hyprland
+    ./cliphist
+    ./swayidle
   ];
 }

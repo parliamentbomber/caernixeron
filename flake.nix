@@ -56,6 +56,9 @@
     hyprpicker = {
       url = "github:hyprwm/hyprpicker";
     };
+    xdg-desktop-portal-hyprland = {
+      url = "github:hyprwm/xdg-desktop-portal-hyprland";
+    };
   };
 
   outputs = {
@@ -108,6 +111,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./configurations/tylo
+          ./system/core
         ];
       };
     };

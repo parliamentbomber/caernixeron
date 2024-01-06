@@ -18,12 +18,6 @@
     ./mime.nix
     ./audio
     ./swayidle.nix
-    ./waybar
-    ./wlogout
-    ./cliphist
-    ./wlsunset
-    ./swayosd
-    ./udiskie
     ./wayland
   ];
   home.stateVersion = "23.11";
