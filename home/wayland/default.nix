@@ -6,10 +6,10 @@
 }: {
   home.packages = with pkgs;
   with inputs.hyprcontrib.packages.${pkgs.system};
-  with inputs.eww-tray.packages.${pkgs.system};
-  with inputs.hyprpicker.packages.${pkgs.system}; [
+  with inputs.hyprpicker.packages.${pkgs.system};
+  with inputs.shadower.packages.${pkgs.system}; [
     inputs.watershot.packages.${pkgs.system}.default
-    eww-wayland
+    shadower
     hyprpicker
     libnotify
     kooha

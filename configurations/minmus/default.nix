@@ -7,27 +7,15 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../../system/wayland
   ];
 
   # networking, firewall, and hostname
   networking = {
     hostName = "minmus";
     networkmanager.enable = true;
-    firewall = {
-      enable = true;
-      allowedTCPPortRanges = [
-        {
-          from = 1714;
-          to = 1764;
-        } # KDE Connect
-      ];
-      allowedUDPPortRanges = [
-        {
-          from = 1714;
-          to = 1764;
-        } # KDE Connect
-      ];
-    };
+    firewall.enable = true;
+    enableIPv6 = false;
   };
 
   # env variables

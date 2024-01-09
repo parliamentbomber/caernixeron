@@ -1,8 +1,4 @@
-{
-  config,
-  plugins,
-  ...
-}: {
+{...}: {
   programs.git = {
     enable = true;
     userName = "joe swanson";

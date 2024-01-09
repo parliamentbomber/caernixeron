@@ -1,6 +1,5 @@
 {
   description = "caernixeron";
-
   inputs = {
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable"; # bleeding edge all the way gang
@@ -58,6 +57,10 @@
     };
     xdg-desktop-portal-hyprland = {
       url = "github:hyprwm/xdg-desktop-portal-hyprland";
+    };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

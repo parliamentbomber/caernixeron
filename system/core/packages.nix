@@ -1,10 +1,4 @@
-{
-  config,
-  inputs,
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     virt-manager
@@ -24,7 +18,6 @@
     wget
     gnome.gnome-calendar
     microsoft-edge-dev
-    neovim
     bat
     vscode
     ffmpeg
@@ -55,9 +48,6 @@
         enableExtraSocket = true;
         pinentryFlavor = "gnome3";
       };
-    };
-    kdeconnect = {
-      enable = lib.mkDefault true;
     };
   };
 }

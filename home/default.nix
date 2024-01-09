@@ -7,6 +7,7 @@
   imports = [
     inputs.spicetify-nix.homeManagerModule
     inputs.anyrun.homeManagerModules.default
+    inputs.nixvim.homeManagerModules.nixvim
     ./gtk.nix
     ./vscode.nix
     ./packages.nix
@@ -17,8 +18,8 @@
     ./zsh.nix
     ./mime.nix
     ./audio
-    ./swayidle.nix
     ./wayland
+    ./neovim
   ];
   home.stateVersion = "23.11";
 }

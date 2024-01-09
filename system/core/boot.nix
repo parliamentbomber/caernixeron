@@ -18,7 +18,7 @@
       pkiBundle = "/etc/secureboot";
     };
   };
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
     inputs.nh.packages.${pkgs.system}.default
     inputs.lanzaboote.packages.${pkgs.system}.lzbt
     inputs.lanzaboote.packages.${pkgs.system}.stub

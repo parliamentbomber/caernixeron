@@ -1,8 +1,3 @@
-{
-  config,
-  pkgs,
-  user,
-  ...
-}: {
+{pkgs, ...}: {
   programs.starship.enable = true;
 }
