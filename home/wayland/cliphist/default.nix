@@ -5,6 +5,6 @@
 }: {
   services.cliphist = {
     enable = true;
-    systemdTarget = "hyprland-session.target";
+    systemdTarget = "graphical-session.target";
   };
 }

@@ -7,8 +7,15 @@
       {
         plugin = suda-vim;
       }
+      {
+	plugin = autoclose-nvim;
+	config = ''lua require("autoclose").setup()'';
+      }
     ];
     plugins = {
+      nix = {
+	enable = true;
+      };
       oil = {
         enable = true;
       };
@@ -65,6 +72,8 @@
           };
           rust-analyzer = {
             enable = true;
+            installRustc = true;
+            installCargo = true;
           };
           rnix-lsp = {
             enable = true;

@@ -14,7 +14,6 @@
     libnotify
     kooha
     handbrake
-    kitty
     dunst
     wl-clipboard
     wl-clip-persist
@@ -38,5 +37,6 @@
     ./hyprland
     ./cliphist
     ./swayidle
+    ./kitty
   ];
 }
