@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
+  imports = [
+    ./lsp.nix
+    ./options.nix
+    ./plugins.nix
+    ./theme.nix
+  ];
   programs.nixvim = {
     enable = true;
     extraConfigLua = "vim.cmd('set cmdheight=0')";
@@ -8,13 +14,13 @@
         plugin = suda-vim;
       }
       {
-	plugin = autoclose-nvim;
-	config = ''lua require("autoclose").setup()'';
+        plugin = autoclose-nvim;
+        config = ''lua require("autoclose").setup()'';
       }
     ];
     plugins = {
       nix = {
-	enable = true;
+        enable = true;
       };
       oil = {
         enable = true;
@@ -42,14 +48,16 @@
         enable = true;
         autoEnableSources = true;
         sources = [
-          {name = "nvim_lsp";}
-          {name = "path";}
-          {name = "buffer";}
-          {name = "luasnip";}
+          { name = "nvim_lsp"; }
+          { name = "path"; }
+          { name = "buffer"; }
+          { name = "luasnip"; }
         ];
 
         mapping = {
           "<CR>" = "cmp.mapping.confirm({ select = true })";
+          "<Tab>" = "cmp.mapping.select_next_item()";
+          "<S-Tab>" = "cmp.mapping.select_prev_item";
         };
       };
       lsp = {
