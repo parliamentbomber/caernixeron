@@ -1,7 +1,5 @@
-{
-  config,
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   services = {
     devmon.enable = true;
@@ -42,4 +40,5 @@
     };
   };
   hardware.bluetooth.enable = true;
+  systemd.services.NetworkManager-wait-online.enable = false;
 }

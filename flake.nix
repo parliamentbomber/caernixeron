@@ -62,61 +62,65 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
-
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  } @ inputs: {
-    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
-    nixosConfigurations = {
-      # Run the following command in the flake's directory to
-      # deploy this configuration on any NixOS system:
-      #   sudo nixos-rebuild switch --flake .#nixos-test
-      "eeloo" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        system = "x86_64-linux";
-        modules = [
-          ./configurations/eeloo
-          ./system/core
-          inputs.home-manager.nixosModules.default
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {inherit inputs;};
-            home-manager.users.nixer = import ./home;
-          }
-          inputs.hyprland.nixosModules.default
-          inputs.lanzaboote.nixosModules.lanzaboote
-        ];
-      };
-      "minmus" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./configurations/minmus
-          ./system/core
-          inputs.home-manager.nixosModules.default
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {inherit inputs;};
-            home-manager.users.nixer = import ./home;
-          }
-          inputs.hyprland.nixosModules.default
-          inputs.lanzaboote.nixosModules.lanzaboote
-        ];
-      };
-      "tylo" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./configurations/tylo
-          ./system/core
-        ];
-      };
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+  outputs =
+    { self
+    , nixpkgs
+    , home-manager
+    , ...
+    } @ inputs: {
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+      nixosConfigurations = {
+        # Run the following command in the flake's directory to
+        # deploy this configuration on any NixOS system:
+        #   sudo nixos-rebuild switch --flake .#nixos-test
+        "eeloo" = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          system = "x86_64-linux";
+          modules = [
+            ./configurations/eeloo
+            ./system/core
+            inputs.home-manager.nixosModules.default
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.nixer = import ./home;
+            }
+            inputs.hyprland.nixosModules.default
+            inputs.lanzaboote.nixosModules.lanzaboote
+          ];
+        };
+        "minmus" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./configurations/minmus
+            ./system/core
+            inputs.home-manager.nixosModules.default
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.nixer = import ./home;
+            }
+            inputs.hyprland.nixosModules.default
+            inputs.lanzaboote.nixosModules.lanzaboote
+          ];
+        };
+        "tylo" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./configurations/tylo
+            ./system/core
+          ];
+        };
+      };
+    };
 }
