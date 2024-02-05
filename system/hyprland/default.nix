@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: {
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.default;
-  };
+  #programs.hyprland = {
+  #  enable = true;
+  #  xwayland.enable = true;
+  #  package = inputs.hyprland.packages.${pkgs.system}.default;
+  #};
 }

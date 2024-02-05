@@ -11,6 +11,7 @@
     ./system.nix
     ./systemd.nix
     ./users.nix
+    ./openrgb.nix
     ./virtualisation.nix
     ./ssh.nix
   ];

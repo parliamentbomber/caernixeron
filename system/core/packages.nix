@@ -26,6 +26,8 @@
     imv
     obs-studio
     blender
+    uxplay
+    rpiplay
     pavucontrol
     gnome.nautilus
     htop

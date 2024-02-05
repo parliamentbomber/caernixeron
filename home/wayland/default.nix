@@ -9,6 +9,7 @@
   with inputs.hyprpicker.packages.${pkgs.system};
   with inputs.shadower.packages.${pkgs.system}; [
     inputs.watershot.packages.${pkgs.system}.default
+    inputs.skibidivim.packages.${pkgs.system}.default
     shadower
     hyprpicker
     libnotify
@@ -29,14 +30,12 @@
     networkmanagerapplet
   ];
   imports = [
-    ./hyprland
     ./wlsunset
     ./wlogout
     ./waybar
     ./swayosd
-    ./hyprland
     ./cliphist
     ./swayidle
-    ./kitty
+    ./alacritty
   ];
 }

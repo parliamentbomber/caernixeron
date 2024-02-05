@@ -11,6 +11,7 @@
     ./gtk.nix
     ./vscode.nix
     ./packages.nix
+    ./firefox.nix
     ./spicetify.nix
     ./starship.nix
     ./anyrun.nix
@@ -19,7 +20,6 @@
     ./mime.nix
     ./audio
     ./wayland
-    ./neovim
   ];
   home.stateVersion = "23.11";
 }

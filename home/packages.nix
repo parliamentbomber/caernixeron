@@ -1,6 +1,9 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
-    gimp
     wireshark
+    unityhub
+    bottles
+    dotnet-sdk
+    lutris
   ];
 }

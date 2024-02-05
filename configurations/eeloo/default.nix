@@ -1,6 +1,7 @@
 # desktop specific nixos options
 {
   config,
+  options,
   pkgs,
   ...
 }: {
@@ -14,11 +15,24 @@
   powerManagement = {
     cpuFreqGovernor = "performance";
   };
+
   # networking, firewall, and hostname
   networking = {
     hostName = "eeloo";
     networkmanager.enable = true;
-    firewall.enable = true;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [
+        7000
+        7001
+        7100
+      ];
+      allowedUDPPorts = [
+        6000
+        6001
+        7011
+      ];
+    };
     enableIPv6 = false;
   };
   # swap

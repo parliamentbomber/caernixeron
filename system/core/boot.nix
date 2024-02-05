@@ -10,7 +10,11 @@
     kernelModules = ["kvm-intel"];
     supportedFilesystems = ["ntfs"];
     loader = {
-      systemd-boot.enable = lib.mkForce false;
+      timeout = 15;
+      systemd-boot = {
+        enable = lib.mkForce false;
+        consoleMode = "auto";
+      };
       efi.canTouchEfiVariables = true;
     };
     lanzaboote = {

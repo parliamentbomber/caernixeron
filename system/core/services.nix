@@ -1,6 +1,4 @@
-{ pkgs
-, ...
-}: {
+{pkgs, ...}: {
   services = {
     devmon.enable = true;
     xserver = {
@@ -27,6 +25,11 @@
       enable = true;
       nssmdns4 = true;
       openFirewall = true;
+      publish = {
+        enable = true;
+        userServices = true;
+        domain = true;
+      };
     };
     pipewire = {
       enable = true;

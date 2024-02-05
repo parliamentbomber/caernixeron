@@ -1,6 +1,7 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   fonts = {
     fontDir.enable = true;
@@ -13,14 +14,14 @@
       source-han-sans-japanese
       source-han-serif-japanese
 
-      (nerdfonts.override { fonts = [ "Meslo" ]; })
+      (nerdfonts.override {fonts = ["Meslo"];})
     ];
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = [ "Meslo LG M Regular Nerd Font Complete Mono" ];
-        serif = [ "Noto Serif" "Source Han Serif" ];
-        sansSerif = [ "Noto Sans" "Source Han Sans" ];
+        monospace = ["Meslo LG M Regular Nerd Font Complete Mono"];
+        serif = ["Noto Serif" "Source Han Serif"];
+        sansSerif = ["Noto Sans" "Source Han Sans"];
       };
     };
   };
