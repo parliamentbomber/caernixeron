@@ -10,10 +10,6 @@
       resyncTimer = "10m";
     };
   };
-  environment.variables = {
-    EDITOR = "nvim";
-    BROWSER = "google-chrome";
-  };
   environment.systemPackages = with pkgs; [
     appimage-run
   ];

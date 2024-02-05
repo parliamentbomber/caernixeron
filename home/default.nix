@@ -9,6 +9,7 @@
     inputs.anyrun.homeManagerModules.default
     inputs.nixvim.homeManagerModules.nixvim
     ./gtk.nix
+    ./discord.nix
     ./vscode.nix
     ./packages.nix
     ./firefox.nix

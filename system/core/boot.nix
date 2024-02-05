@@ -1,14 +1,13 @@
-{
-  config,
-  pkgs,
-  inputs,
-  lib,
-  ...
+{ coig
+, pkgs
+, inputs
+, lib
+, ...
 }: {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = ["kvm-intel"];
-    supportedFilesystems = ["ntfs"];
+    kernelModules = [ "kvm-intel" ];
+    supportedFilesystems = [ "ntfs" ];
     loader = {
       timeout = 15;
       systemd-boot = {
@@ -24,7 +23,5 @@
   };
   environment.systemPackages = [
     inputs.nh.packages.${pkgs.system}.default
-    inputs.lanzaboote.packages.${pkgs.system}.lzbt
-    inputs.lanzaboote.packages.${pkgs.system}.stub
   ];
 }

@@ -11,6 +11,9 @@
     ../../system/novideo
     ../../system/gaming
     ../../system/wayland
+    ../../system/gamedev
+    ../../system/audio
+    ../../system/hyprland
   ];
   powerManagement = {
     cpuFreqGovernor = "performance";

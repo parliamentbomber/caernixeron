@@ -1,12 +1,16 @@
-{
-  config,
-  inputs,
-  pkgs,
-  ...
+{ config
+, inputs
+, pkgs
+, ...
 }: {
-  #programs.hyprland = {
-  #  enable = true;
-  #  xwayland.enable = true;
-  #  package = inputs.hyprland.packages.${pkgs.system}.default;
-  #};
+  imports = [
+    ./systemd.nix
+  ];
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }
