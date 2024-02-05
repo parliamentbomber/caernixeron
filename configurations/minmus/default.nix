@@ -10,6 +10,7 @@
     ../../system/hyprland
     ../../system/audio
     ../../system/gamedev
+    ../../system/services
   ];
 
   # networking, firewall, and hostname

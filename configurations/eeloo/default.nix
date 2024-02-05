@@ -1,9 +1,8 @@
 # desktop specific nixos options
-{
-  config,
-  options,
-  pkgs,
-  ...
+{ config
+, options
+, pkgs
+, ...
 }: {
   imports = [
     # Include the results of the hardware scan.
@@ -14,6 +13,7 @@
     ../../system/gamedev
     ../../system/audio
     ../../system/hyprland
+    ../../system/services
   ];
   powerManagement = {
     cpuFreqGovernor = "performance";
