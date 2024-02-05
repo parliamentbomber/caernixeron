@@ -1,8 +1,7 @@
 # laptop specific nixos options
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   imports = [
     # Include the results of the hardware scan.
@@ -13,6 +12,7 @@
     ../../system/gamedev
     ../../system/services
     ../../system/gaming
+    ../../system/security
   ];
 
   # networking, firewall, and hostname

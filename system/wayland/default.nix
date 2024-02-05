@@ -1,8 +1,10 @@
-{
-  inputs,
-  pkgs,
-  ...
+{ inputs
+, pkgs
+, ...
 }: {
+  imports = [
+    ./swaylock.nix
+  ];
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
