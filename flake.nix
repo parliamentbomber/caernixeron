@@ -4,6 +4,9 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable"; # bleeding edge all the way gang
     };
+    matugen = {
+      url = "github:iniox/matugen";
+    };
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";

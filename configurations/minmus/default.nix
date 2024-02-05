@@ -1,7 +1,8 @@
 # laptop specific nixos options
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   imports = [
     # Include the results of the hardware scan.
@@ -11,9 +12,22 @@
     ../../system/audio
     ../../system/gamedev
     ../../system/services
+    ../../system/gaming
   ];
 
   # networking, firewall, and hostname
+  services.auto-cpufreq = {
+    enable = true;
+    settings = {
+      battery = {
+        governor = "powersave";
+      };
+      charger = {
+        governor = "performance";
+        turbo = "auto";
+      };
+    };
+  };
   networking = {
     hostName = "minmus";
     networkmanager.enable = true;

@@ -1,13 +1,14 @@
-{ coig
-, pkgs
-, inputs
-, lib
-, ...
+{
+  coig,
+  pkgs,
+  inputs,
+  lib,
+  ...
 }: {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = [ "kvm-intel" ];
-    supportedFilesystems = [ "ntfs" ];
+    kernelModules = ["kvm-intel"];
+    supportedFilesystems = ["ntfs"];
     loader = {
       timeout = 15;
       systemd-boot = {

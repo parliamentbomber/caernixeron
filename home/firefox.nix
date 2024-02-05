@@ -1,5 +1,5 @@
 {config, ...}: {
   programs.firefox = {
-    enable = true;
+    enable = false;
   };
 }
