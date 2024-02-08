@@ -307,6 +307,22 @@
         "type": "github"
       }
     },
+    "flake-compat_8": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1696426674,
+        "narHash": "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "0f9255e01c2351cc7d116c072cb317785dd33b33",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -1599,6 +1615,22 @@
     },
     "nixpkgs_17": {
       "locked": {
+        "lastModified": 1704538339,
+        "narHash": "sha256-1734d3mQuux9ySvwf6axRWZRBhtcZA9Q8eftD6EZg6U=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "46ae0210ce163b3cba6c7da08840c1d63de9c701",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_18": {
+      "locked": {
         "lastModified": 1703961334,
         "narHash": "sha256-M1mV/Cq+pgjk0rt6VxoyyD+O8cOUiai8t9Q6Yyq4noY=",
         "owner": "NixOS",
@@ -2074,6 +2106,7 @@
         "skibidivim": "skibidivim",
         "spicetify-nix": "spicetify-nix",
         "watershot": "watershot",
+        "waybar": "waybar",
         "xdg-desktop-portal-hyprland": "xdg-desktop-portal-hyprland"
       }
     },
@@ -2504,6 +2537,25 @@
         "type": "github"
       }
     },
+    "waybar": {
+      "inputs": {
+        "flake-compat": "flake-compat_8",
+        "nixpkgs": "nixpkgs_17"
+      },
+      "locked": {
+        "lastModified": 1707232732,
+        "narHash": "sha256-y/PrfwrAua2v1c8gRBP3zY8qCY/HEpXMIuYvWWchhhU=",
+        "owner": "alexays",
+        "repo": "waybar",
+        "rev": "b6f4a0dae2c2a438e91ac60681d2494aca12e359",
+        "type": "github"
+      },
+      "original": {
+        "owner": "alexays",
+        "repo": "waybar",
+        "type": "github"
+      }
+    },
     "wlroots": {
       "flake": false,
       "locked": {
@@ -2546,7 +2598,7 @@
       "inputs": {
         "hyprland-protocols": "hyprland-protocols_3",
         "hyprlang": "hyprlang_3",
-        "nixpkgs": "nixpkgs_17",
+        "nixpkgs": "nixpkgs_18",
         "systems": "systems_11"
       },
       "locked": {

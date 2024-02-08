@@ -1,10 +1,10 @@
-{ config, ... }: {
+{config, ...}: {
   security = {
     doas = {
       enable = true;
       extraRules = [
         {
-          users = [ "nixer" ];
+          users = ["nixer"];
           keepEnv = true;
         }
       ];

@@ -8,8 +8,8 @@
     ./binds.nix
     ./execonce.nix
     ./rules.nix
-    ./modules/monitors.nix
     ./settings.nix
+    ./modules
   ];
   wayland.windowManager.hyprland = {
     enable = true;

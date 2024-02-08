@@ -1,9 +1,10 @@
-{ pkgs
-, lib
-, ...
+{
+  pkgs,
+  lib,
+  ...
 }: {
   security.pam.services = {
-    swaylock = { };
+    swaylock = {};
     gtklock.text = lib.readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
   };
 }

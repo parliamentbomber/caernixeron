@@ -6,7 +6,7 @@
 }: let
   inherit (lib) mkOption types;
 in {
-  options.homeshartener.monitors = mkOption {
+  options.monitors = mkOption {
     type = types.listOf (types.submodule {
       options = {
         name = mkOption {
@@ -26,7 +26,7 @@ in {
           example = 1080;
         };
         refreshRate = mkOption {
-          type = types.float;
+          type = types.int;
           default = 60;
         };
         x = mkOption {
@@ -47,6 +47,16 @@ in {
         };
       };
     });
-    default = [];
+    default = [
+      {
+        name = "eDP-1";
+        width = 1920;
+        height = 1080;
+        refreshRate = 60;
+        x = 0;
+        y = 0;
+        primary = true;
+      }
+    ];
   };
 }

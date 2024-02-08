@@ -4,6 +4,9 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable"; # bleeding edge all the way gang
     };
+    waybar = {
+      url = "github:alexays/waybar";
+    };
     matugen = {
       url = "github:iniox/matugen";
     };

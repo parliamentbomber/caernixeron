@@ -29,8 +29,8 @@ in {
     in {
       "$mod" = "SUPER";
       bindm = [
-        "$MOD,mouse:272,movewindow"
-        "$MOD,mouse:273,resizewindow"
+        "$mod,mouse:272,movewindow"
+        "$mod,mouse:273,resizewindow"
       ];
       # wm commands
       bind = let
@@ -46,9 +46,9 @@ in {
           "ALT, TAB, cyclenext"
           "$mod, P, pin"
           # programs
-          "$mod, E, ${guifilebrowser}"
-          "$mod, N, ${terminal}"
-          "$mod, SPACE, ${applauncher}"
+          "$mod, E, exec, ${guifilebrowser}"
+          "$mod, N, exec, ${terminal}"
+          "$mod, SPACE, exec, ${applauncher}"
           #special workspaces
           "$mod, grave, togglespecialworkspace, discord"
           "$mod, TAB, togglespecialworkspace, spotify"
@@ -57,7 +57,7 @@ in {
           "$mod, S, ${screenshot}"
           "$mod, V, ${clipboard}"
           #volume
-          ", XF86AudioPlay exec, playerctl play-pause"
+          ", XF86AudioPlay, exec, playerctl play-pause"
           ", XF86AudioPause exec, playerctl play-pause"
           ", XF86AudioMute,exec, ${pkgs.swayosd}/bin/swayosd-client --output-volume mute-toggle "
           ",XF86AudioNext, exec, playerctl next"

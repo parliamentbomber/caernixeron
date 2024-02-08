@@ -1,9 +1,9 @@
-{config, ...}: {
+{ config, ... }: {
   nix = {
     settings = {
-      experimental-features = ["nix-command" "flakes"];
-      allowed-users = ["@wheel" "nixer"];
-      trusted-users = ["@wheel" "nixer"];
+      experimental-features = [ "nix-command" "flakes" ];
+      allowed-users = [ "@wheel" "nixer" ];
+      trusted-users = [ "@wheel" "nixer" ];
       auto-optimise-store = true;
       sandbox = true;
       max-jobs = "auto";

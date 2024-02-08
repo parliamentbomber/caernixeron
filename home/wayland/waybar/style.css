@@ -1,0 +1,13 @@
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family:Lexend, Iosevka Nerd Font;
+  all:unset;
+}
+
+window#waybar {
+  background-color: rgba(24, 24, 37, 0.8);
+  border-radius: 0px;
+  box-shadow: 2px 3px 2px 2px #151515;
+  font-size: 14px;
+}
+
