@@ -9,7 +9,6 @@
       };
     };
     gvfs.enable = true;
-    tailscale.enable = true;
     dbus.enable = true;
     flatpak.enable = true;
     ratbagd.enable = true;
@@ -29,5 +28,4 @@
     };
   };
   hardware.bluetooth.enable = true;
-  systemd.services.NetworkManager-wait-online.enable = false;
 }

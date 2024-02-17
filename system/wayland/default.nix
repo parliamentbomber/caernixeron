@@ -1,14 +1,9 @@
-{
-  inputs,
-  pkgs,
-  ...
+{ inputs
+, pkgs
+, ...
 }: {
   imports = [
     ./swaylock.nix
+    ./clight.nix
   ];
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.default;
-  };
 }

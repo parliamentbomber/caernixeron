@@ -4,7 +4,6 @@
     enable = true;
     settings = {
       PermitRootLogin = "prohibit-password";
-      UseDns = false;
       X11Forwarding = false;
       PasswordAuthentication = lib.mkForce false;
       KbdInteractiveAuthentication = false;

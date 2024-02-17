@@ -6,12 +6,12 @@
 }: {
   imports = [
     ./systemd.nix
+    ./xdg.nix
   ];
-  xdg.portal = {
+  programs.hyprland = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
+    xwayland.enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }

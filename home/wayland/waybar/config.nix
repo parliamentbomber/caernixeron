@@ -1,7 +1,7 @@
-{ pkgs
-
-, lib
-, ...
+{
+  pkgs,
+  lib,
+  ...
 }: {
   programs.waybar = {
     settings = {
@@ -85,5 +85,3 @@
     };
   };
 }
-
-

@@ -15,6 +15,8 @@
     ../../system/gaming
     ../../system/security
     ../../system/hardware
+    ../../system/nix
+    ../../system/networking
   ];
 
   # networking, firewall, and hostname

@@ -20,6 +20,7 @@
     ./zsh.nix
     ./mime.nix
     ./audio
+    ./rice
     ./wayland
   ];
   home.stateVersion = "23.11";
