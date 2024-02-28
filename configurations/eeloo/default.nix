@@ -1,20 +1,7 @@
 # desktop specific nixos options
-{
-  config,
-  options,
-  pkgs,
-  ...
-}: {
+{...}: {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../system/novideo
-    ../../system/gaming
-    ../../system/wayland
-    ../../system/gamedev
-    ../../system/audio
-    ../../system/hyprland
-    ../../system/services
   ];
   powerManagement = {
     cpuFreqGovernor = "performance";
@@ -22,7 +9,6 @@
 
   # networking, firewall, and hostname
   networking = {
-    hostName = "eeloo";
     networkmanager.enable = true;
     firewall = {
       enable = true;

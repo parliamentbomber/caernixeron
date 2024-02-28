@@ -1,10 +1,12 @@
 {
-  coig,
   pkgs,
   inputs,
   lib,
   ...
 }: {
+  imports = [
+    inputs.lanzaboote.nixosModules.lanzaboote
+  ];
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = ["kvm-intel"];

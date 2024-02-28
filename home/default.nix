@@ -1,8 +1,7 @@
-{
-  config,
-  inputs,
-  pkgs,
-  ...
+{ config
+, inputs
+, pkgs
+, ...
 }: {
   imports = [
     inputs.spicetify-nix.homeManagerModule
@@ -22,6 +21,7 @@
     ./audio
     ./rice
     ./wayland
+    ./programs
   ];
   home.stateVersion = "23.11";
 }

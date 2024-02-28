@@ -1,10 +1,9 @@
-{
-  config,
-  inputs,
-  pkgs,
-  ...
+{ config
+, inputs
+, pkgs
+, ...
 }: {
-  printing = {
+  services.printing = {
     enable = true;
     logLevel = "debug";
     drivers = [

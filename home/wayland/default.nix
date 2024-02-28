@@ -38,6 +38,7 @@
     ./swayidle
     ./alacritty
     ./swaylock.nix
+    ./hyprlock.nix
     ./ricetools.nix
   ];
 }

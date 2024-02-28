@@ -1,22 +1,7 @@
 # laptop specific nixos options
-{
-  config,
-  pkgs,
-  ...
-}: {
+{ ... }: {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../system/wayland
-    ../../system/hyprland
-    ../../system/audio
-    ../../system/gamedev
-    ../../system/services
-    ../../system/gaming
-    ../../system/security
-    ../../system/hardware
-    ../../system/nix
-    ../../system/networking
   ];
 
   # networking, firewall, and hostname
@@ -33,10 +18,10 @@
     };
   };
   networking = {
-    hostName = "minmus";
     networkmanager.enable = true;
     firewall = {
       allowPing = false;
+      allowedTCPPorts = [ 57621 ];
       enable = true;
     };
     enableIPv6 = false;

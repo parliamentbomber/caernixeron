@@ -1,8 +1,6 @@
 { lib, ... }: {
   # balls
   imports = [
-    ./spotify.nix
-    ./tailscale.nix
     ./avahi.nix
   ]; #
 

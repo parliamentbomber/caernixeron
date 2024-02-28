@@ -1,6 +1,6 @@
 {
   imports = [
-    ./boot.nix
+    ./audio.nix
     ./fonts.nix
     ./i18n.nix
     ./nix.nix
@@ -11,5 +11,7 @@
     ./systemd.nix
     ./users.nix
     ./ssh.nix
+    ./../nix
+    ./../networking
   ];
 }
