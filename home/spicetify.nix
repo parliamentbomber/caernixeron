@@ -10,8 +10,9 @@
     in
     {
       enable = true;
+      theme = spicePkgs.themes.SpotifyCanvas;
       enabledExtensions = with spicePkgs.extensions; [
-        #adblock - i have premium atm
+        adblock
       ];
     };
 }

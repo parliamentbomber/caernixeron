@@ -10,6 +10,7 @@
     ./gtk.nix
     ./discord.nix
     ./vscode.nix
+    ./obs.nix
     ./packages.nix
     ./firefox.nix
     ./spicetify.nix

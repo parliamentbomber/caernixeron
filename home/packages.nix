@@ -7,7 +7,9 @@
     mpv
     gtklock
     blender
+    helvum
     gtklock-playerctl-module
-    self.packages.${pkgs.system}.everforest-gtk-theme
+    google-chrome
+    playerctl
   ];
 }

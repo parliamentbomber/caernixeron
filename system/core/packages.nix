@@ -17,9 +17,6 @@
     google-chrome
     wget
     gnome.gnome-calendar
-    microsoft-edge-dev
-    bat
-    spotify
     imv
     gnome.nautilus
     htop

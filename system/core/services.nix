@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   services = {
     devmon.enable = true;
     xserver = {
@@ -27,5 +27,7 @@
       extraConfig = "HandlePowerKey=ignore\n HandlePowerKeyLongPress=ignore";
     };
   };
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+  };
 }

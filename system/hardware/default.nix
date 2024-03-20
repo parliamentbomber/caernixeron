@@ -1,10 +1,6 @@
-{pkgs, ...}: {
-  hardware.opengl = {
-    enable = true;
-    extraPackages = with pkgs; [
-      libva
-      vaapiVdpau
-      libvdpau-va-gl
-    ];
-  };
+{
+  imports = [
+    ./bluetooth.nix
+    ./opengl.nix
+  ];
 }

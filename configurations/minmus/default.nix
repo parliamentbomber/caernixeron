@@ -1,5 +1,5 @@
 # laptop specific nixos options
-{ ... }: {
+{...}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -21,7 +21,7 @@
     networkmanager.enable = true;
     firewall = {
       allowPing = false;
-      allowedTCPPorts = [ 57621 ];
+      allowedTCPPorts = [57621];
       enable = true;
     };
     enableIPv6 = false;

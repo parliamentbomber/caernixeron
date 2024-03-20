@@ -1,9 +1,9 @@
-{ lib
-, stdenvNoCC
-, fetchzip
-, gnome-themes-extra
-, gtk-engine-murrine
-,
+{
+  lib,
+  stdenvNoCC,
+  fetchzip,
+  gnome-themes-extra,
+  gtk-engine-murrine,
 }:
 stdenvNoCC.mkDerivation {
   pname = "torus";
@@ -38,6 +38,6 @@ stdenvNoCC.mkDerivation {
     homepage = "https://www.pling.com/p/1681313/";
     license = licenses.gpl3Only;
     platforms = platforms.unix;
-    maintainers = [ maintainers.math-42 ];
+    maintainers = [maintainers.math-42];
   };
 }
