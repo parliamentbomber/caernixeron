@@ -1,14 +1,13 @@
-{
-  pkgs,
-  inputs,
-  ...
+{ pkgs
+, inputs
+, ...
 }: {
   imports = [
     ./config.nix
     ./style.nix
   ];
   programs.waybar = {
-    enable = true;
+    enable = false;
     package = inputs.waybar.packages.${pkgs.system}.default;
     systemd.enable = true;
   };

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   fonts = {
     fontDir.enable = true;
     packages = with pkgs; [
@@ -11,14 +11,14 @@
       source-han-serif-japanese
       lexend
 
-      (nerdfonts.override {fonts = ["Meslo"];})
+      (nerdfonts.override { fonts = [ "Meslo" ]; })
     ];
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = ["Meslo LG M Regular Nerd Font Complete Mono"];
-        serif = ["Lexend"];
-        sansSerif = ["Lexend"];
+        monospace = [ "Meslo LG M Regular Nerd Font Complete Mono" ];
+        serif = [ "Lexend" ];
+        sansSerif = [ "Lexend" ];
       };
     };
   };

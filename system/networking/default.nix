@@ -1,4 +1,4 @@
-{lib, ...}: {
+{ lib, ... }: {
   # balls
   imports = [
     ./avahi.nix
@@ -17,11 +17,9 @@
     };
 
     # DNS resolver
-    resolved.enable = true;
   };
 
   # Don't wait for network startup
-  systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
 }
 # borrowed from fufexan
 

@@ -1,7 +1,8 @@
-{ pkgs
-, inputs
-, self
-, ...
+{
+  pkgs,
+  inputs,
+  self,
+  ...
 }: {
   home.packages = with pkgs; [
     mpv

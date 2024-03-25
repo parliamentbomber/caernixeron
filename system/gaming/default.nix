@@ -1,8 +1,7 @@
-{
-  config,
-  inputs,
-  pkgs,
-  ...
+{ config
+, inputs
+, pkgs
+, ...
 }: {
   environment.systemPackages = with pkgs; [
     ckan
@@ -14,7 +13,7 @@
   nixpkgs.overlays = [
     (_: prev: {
       steam = prev.steam.override {
-        extraProfile = "export STEAM_EXTRA_COMPAT_TOOLS_PATHS='${inputs.nix-gaming.packages.${pkgs.system}.proton-ge}'";
+        extraProfile = "export STEAM_EXTRA_COMPAT_TOOLS_PATHS='${pkgs.proton-ge-bin}'";
       };
     })
   ];

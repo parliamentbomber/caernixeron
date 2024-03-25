@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     dconf
     monaspace
@@ -20,9 +20,6 @@
   };
   gtk = {
     enable = true;
-    font = {
-      name = "Torus";
-    };
     theme = {
       name = "Gruvbox-Dark-BL";
       package = pkgs.gruvbox-gtk-theme;

@@ -20,7 +20,6 @@
     ./zsh.nix
     ./mime.nix
     ./audio
-    ./rice
     ./wayland
     ./programs
   ];

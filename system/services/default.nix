@@ -1,6 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   services = {
-    dbus.implementation = "broker";
 
     # profile-sync-daemon
     psd = {
