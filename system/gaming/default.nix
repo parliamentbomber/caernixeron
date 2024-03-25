@@ -8,7 +8,6 @@
     ckan
     piper
     inputs.prismlauncher.packages.${pkgs.system}.default
-    inputs.nix-gaming.packages.${pkgs.system}.proton-ge
     steam-run
   ];
   nixpkgs.overlays = [

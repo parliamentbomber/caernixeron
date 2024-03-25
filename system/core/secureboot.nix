@@ -1,16 +1,17 @@
-{ pkgs
-, config
-, inputs
-, lib
-, ...
+{
+  pkgs,
+  config,
+  inputs,
+  lib,
+  ...
 }: {
   imports = [
     inputs.lanzaboote.nixosModules.lanzaboote
   ];
   boot = {
-    kernelModules = [ "kvm-intel" ];
+    kernelModules = ["kvm-intel"];
 
-    supportedFilesystems = [ "ntfs" ];
+    supportedFilesystems = ["ntfs"];
     loader = {
       timeout = 15;
       systemd-boot = {
