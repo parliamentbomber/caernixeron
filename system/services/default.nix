@@ -1,6 +1,5 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   services = {
-
     # profile-sync-daemon
     psd = {
       enable = true;

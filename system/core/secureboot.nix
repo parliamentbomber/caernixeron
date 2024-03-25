@@ -8,7 +8,6 @@
     inputs.lanzaboote.nixosModules.lanzaboote
   ];
   boot = {
-    kernelPackages = pkgs.pkgs.linuxPackages_latest;
     kernelModules = [ "kvm-intel" ];
 
     supportedFilesystems = [ "ntfs" ];
