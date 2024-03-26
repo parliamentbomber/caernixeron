@@ -9,8 +9,7 @@
   ];
   boot = {
     kernelPackages = pkgs.pkgs.linuxPackages_latest;
-    kernelModules = [ "kvm-intel" "v4l2loopback" ];
-    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+    kernelModules = [ "kvm-intel" ];
 
     supportedFilesystems = [ "ntfs" ];
     loader = {

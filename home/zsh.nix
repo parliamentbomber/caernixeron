@@ -1,9 +1,8 @@
-{
-  config,
-  pkgs,
-  inputs,
-  lib,
-  ...
+{ config
+, pkgs
+, inputs
+, lib
+, ...
 }: {
   programs = {
     zsh = {
@@ -18,7 +17,7 @@
         rm = "rm -i";
       };
       syntaxHighlighting.enable = true;
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
     };
   };
 }

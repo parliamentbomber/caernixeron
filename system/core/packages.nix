@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = with pkgs; [
@@ -9,7 +9,7 @@
   };
   nixpkgs.overlays = [
     (final: prev: {
-      obsidian-wayland = prev.obsidian.override {electron = final.electron_24;};
+      obsidian-wayland = prev.obsidian.override { electron = final.electron_24; };
     })
   ];
   environment.systemPackages = with pkgs; [
@@ -36,7 +36,6 @@
       agent = {
         enable = true;
         enableExtraSocket = true;
-        pinentryFlavor = "gnome3";
       };
     };
   };

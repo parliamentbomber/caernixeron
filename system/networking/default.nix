@@ -1,4 +1,4 @@
-{lib, ...}: {
+{ lib, ... }: {
   # balls
   imports = [
     ./avahi.nix
@@ -6,8 +6,6 @@
 
   networking.networkmanager = {
     enable = true;
-    dns = "systemd-resolved";
-    wifi.powersave = true;
   };
 
   services = {
