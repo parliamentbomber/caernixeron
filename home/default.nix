@@ -1,7 +1,8 @@
-{ config
-, inputs
-, pkgs
-, ...
+{
+  config,
+  inputs,
+  pkgs,
+  ...
 }: {
   imports = [
     inputs.spicetify-nix.homeManagerModule

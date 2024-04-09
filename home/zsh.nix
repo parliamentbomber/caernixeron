@@ -1,8 +1,9 @@
-{ config
-, pkgs
-, inputs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
 }: {
   programs = {
     zsh = {
@@ -12,8 +13,7 @@
         path = "/home/nixer/.config/zsh/histfile";
       };
       shellAliases = {
-        # hardcoded
-        rebuild = "cd /home/nixer/caernixeron && ${inputs.nh.packages.${pkgs.system}.default}/bin/nh os switch .";
+        rebuild = "${inputs.nh.packages.${pkgs.system}.default}/bin/nh os switch";
         rm = "rm -i";
       };
       syntaxHighlighting.enable = true;

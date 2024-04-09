@@ -32,6 +32,7 @@
     XCURSOR_SIZE = "24";
     SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
   };
+  hardware.bluetooth.enable = true;
 
   # swap
   swapDevices = [

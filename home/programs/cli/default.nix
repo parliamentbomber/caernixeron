@@ -1,5 +1,5 @@
 {
   imports = [
-    ./opengl.nix
+    ./yazi
   ];
 }

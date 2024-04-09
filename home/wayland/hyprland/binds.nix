@@ -32,6 +32,7 @@ in {
         "$mod,mouse:272,movewindow"
         "$mod,mouse:273,resizewindow"
       ];
+
       # wm commands
       bind = let
         clipboard = "${pkgs.cliphist}/bin/cliphist list | anyrun --show-results-immediately true --plugins ${inputs.anyrun.packages.${pkgs.system}.stdin}/lib/libstdin.so | cliphist decode | wl-copy";
@@ -40,7 +41,6 @@ in {
           "$mod, Q, killactive"
           "$mod, F, fullscreen"
           "$mod, R, togglesplit"
-          "$mod, O, togglefloat"
           "$mod, P, pseudo"
           "$mod SHIFT, F, fullscreen,1"
           "ALT, TAB, cyclenext"
@@ -54,14 +54,15 @@ in {
           "$mod, TAB, togglespecialworkspace, spotify"
           "$mod, M, togglespecialworkspace, dropdown"
           # screenshotting
-          "$mod, S, ${screenshot}"
-          "$mod, V, ${clipboard}"
+          "$mod, S, exec, ${screenshot}"
+          "$mod, V, exec, ${clipboard}"
           #volume
           ", XF86AudioPlay, exec, playerctl play-pause"
-          ", XF86AudioPause exec, playerctl play-pause"
+          ", XF86AudioPause, exec, playerctl play-pause"
           ", XF86AudioMute,exec, ${pkgs.swayosd}/bin/swayosd-client --output-volume mute-toggle "
           ",XF86AudioNext, exec, playerctl next"
           ", XF86AudioPrev, exec, playerctl previous"
+          "SUPERSHIFT, SPACE, hyprexpo:expo, toggle"
           #clipboard =
           #"$mod, V,
         ]

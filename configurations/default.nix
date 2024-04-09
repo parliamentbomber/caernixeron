@@ -1,8 +1,8 @@
-{
-  nixpkgs,
-  self,
-  ...
-}: let
+{ nixpkgs
+, self
+, ...
+}:
+let
   inherit (self) inputs;
   core = ../system/core;
   secureboot = ../system/core/secureboot.nix;
@@ -10,13 +10,14 @@
   tailscale = ../home/programs/tailscale.nix;
   gamedev = ../system/gamedev;
   nvidia = ../system/novideo;
-  gaming = ../system/gaming;
+  gaming = ../modules/gaming;
   printing = ../system/printing;
   server = ../system/server;
+  hardware = ../system/hardware;
   wayland = ../system/wayland;
   homeManager = inputs.home-manager.nixosModules.home-manager;
 
-  shared = [core];
+  shared = [ core hardware ];
 
   home-manager = {
     useUserPackages = true;
@@ -26,15 +27,16 @@
       inherit self;
     };
     users.nixer = {
-      imports = [../home];
+      imports = [ ../home ];
     };
   };
-in {
+in
+{
   eeloo = nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     modules =
       [
-        {networking.hostName = "eeloo";}
+        { networking.hostName = "eeloo"; }
         ./eeloo
         nvidia
         secureboot
@@ -44,29 +46,26 @@ in {
         tailscale
         gamedev
         ../system/services
-        {inherit home-manager;}
+        { inherit home-manager; }
       ]
       ++ shared;
-    specialArgs = {inherit inputs;};
+    specialArgs = { inherit inputs; };
   };
 
-  # thinkpad
   minmus = nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     modules =
       [
-        {networking.hostName = "minmus";}
+        { networking.hostName = "minmus"; }
         ./minmus
         wayland
         homeManager
-        tailscale
-        printing
-        grub
-        gaming
         gamedev
-        {inherit home-manager;}
+        tailscale
+        grub
+        { inherit home-manager; }
       ]
       ++ shared;
-    specialArgs = {inherit inputs;};
+    specialArgs = { inherit inputs; };
   };
 }

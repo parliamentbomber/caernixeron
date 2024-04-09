@@ -5,11 +5,8 @@
 }: {
   home.packages = with pkgs; [
     mpv
-    gtklock
-    blender
-    helvum
-    gtklock-playerctl-module
     google-chrome
     playerctl
+    blender
   ];
 }
