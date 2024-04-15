@@ -1,8 +1,8 @@
-{ nixpkgs
-, self
-, ...
-}:
-let
+{
+  nixpkgs,
+  self,
+  ...
+}: let
   inherit (self) inputs;
   core = ../system/core;
   secureboot = ../system/core/secureboot.nix;
@@ -17,7 +17,7 @@ let
   wayland = ../system/wayland;
   homeManager = inputs.home-manager.nixosModules.home-manager;
 
-  shared = [ core hardware ];
+  shared = [core hardware];
 
   home-manager = {
     useUserPackages = true;
@@ -27,16 +27,15 @@ let
       inherit self;
     };
     users.nixer = {
-      imports = [ ../home ];
+      imports = [../home];
     };
   };
-in
-{
+in {
   eeloo = nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     modules =
       [
-        { networking.hostName = "eeloo"; }
+        {networking.hostName = "eeloo";}
         ./eeloo
         nvidia
         secureboot
@@ -46,26 +45,26 @@ in
         tailscale
         gamedev
         ../system/services
-        { inherit home-manager; }
+        {inherit home-manager;}
       ]
       ++ shared;
-    specialArgs = { inherit inputs; };
+    specialArgs = {inherit inputs;};
   };
 
   minmus = nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     modules =
       [
-        { networking.hostName = "minmus"; }
+        {networking.hostName = "minmus";}
         ./minmus
         wayland
         homeManager
         gamedev
         tailscale
         grub
-        { inherit home-manager; }
+        {inherit home-manager;}
       ]
       ++ shared;
-    specialArgs = { inherit inputs; };
+    specialArgs = {inherit inputs;};
   };
 }

@@ -1,32 +1,42 @@
 # ./hyprland.nix
-{
-  inputs,
-  pkgs,
-  config,
-  ...
+{ inputs
+, pkgs
+, config
+, ...
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+      inputs.hyprspace.packages.${pkgs.system}.Hyprspace
     ];
     extraConfig = ''
-          monitor=eDP-1,1920x1080@60,0x0,1
+          monitor=DP-3,2560x1440@144,0x0,1
+      monitor=DP-2,1920x1080@165,2560x0,1
+                      workspace = 1,monitor:DP-3
+            workspace = 2, monitor:DP-3
+            workspace = 3, monitor:DP-3
+            workspace = 4, monitor:DP-3
+            workspace = 5, monitor:DP-2
+            workspace = 6, monitor:DP-2
+            workspace = 7, monitor:DP-2
+            workspace = 8, monitor:DP-2
+            workspace = 9, monitor:DP-2
 
-      animations {
-        enabled = yes
 
-      # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
+                  animations {
+                    enabled = yes
 
-          bezier = myBezier, 0.05, 0.9, 0.1, 1.05
+                  # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
-          animation = windows, 1, 10, myBezier, slide
-          animation = windowsOut, 1, 7, default, slide
-          animation = border, 1, 10, default
-          animation = borderangle, 1, 8, default
-          animation = fade, 1, 7, default
-          animation = workspaces, 1, 6, default, slidevert
-      }
+                      bezier = myBezier, 0.05, 0.9, 0.1, 1.05
+
+                      animation = windows, 1, 10, myBezier, slide
+                      animation = windowsOut, 1, 7, default, slide
+                      animation = border, 1, 10, default
+                      animation = borderangle, 1, 8, default
+                      animation = fade, 1, 7, default
+                      animation = workspaces, 1, 6, default, slidevert
+                  }
     '';
     settings = {
       general = {
