@@ -57,6 +57,7 @@ in {
       [
         {networking.hostName = "minmus";}
         ./minmus
+        ../system/services
         wayland
         homeManager
         gamedev

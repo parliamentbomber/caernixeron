@@ -1,4 +1,4 @@
-{lib, ...}: {
+{ lib, ... }: {
   # balls
   imports = [
     ./avahi.nix

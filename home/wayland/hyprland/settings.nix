@@ -10,19 +10,9 @@
       inputs.hyprspace.packages.${pkgs.system}.Hyprspace
     ];
     extraConfig = ''
-          monitor=DP-3,2560x1440@144,0x0,1
-      monitor=DP-2,1920x1080@165,2560x0,1
-                      workspace = 1,monitor:DP-3
-            workspace = 2, monitor:DP-3
-            workspace = 3, monitor:DP-3
-            workspace = 4, monitor:DP-3
-            workspace = 5, monitor:DP-2
-            workspace = 6, monitor:DP-2
-            workspace = 7, monitor:DP-2
-            workspace = 8, monitor:DP-2
-            workspace = 9, monitor:DP-2
 
 
+     #monitor=eDP-1,1920x1080@60,0x0,1
                   animations {
                     enabled = yes
 
@@ -39,6 +29,21 @@
                   }
     '';
     settings = {
+
+      monitor = map
+        (
+          m:
+          let
+            resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
+            position = "${toString m.x}x${toString m.y}";
+          in
+          "${m.name},${
+          if m.enabled
+          then "${resolution},${position},1"
+          else "disable"
+        }"
+        )
+        (config.monitors);
       general = {
         resize_on_border = true;
         hover_icon_on_border = false;

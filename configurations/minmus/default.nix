@@ -1,5 +1,5 @@
 # laptop specific nixos options
-{...}: {
+{ ... }: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -21,7 +21,7 @@
     networkmanager.enable = true;
     firewall = {
       allowPing = false;
-      allowedTCPPorts = [57621];
+      allowedTCPPorts = [ 57621 ];
       enable = true;
     };
     enableIPv6 = false;
@@ -33,6 +33,15 @@
     SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
   };
   hardware.bluetooth.enable = true;
+  monitors = [{
+    primary = true;
+    name = "eDP-1";
+    width = 1920;
+    height = 1080;
+    x = 0;
+    workspace = "1";
+    enabled = false;
+  }];
 
   # swap
   swapDevices = [

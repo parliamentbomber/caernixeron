@@ -9,5 +9,6 @@
     ./ssh.nix
     ./../nix
     ./../networking
+    ../../modules/home-manager
   ];
 }
