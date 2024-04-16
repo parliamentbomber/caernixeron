@@ -7,6 +7,7 @@
     inputs.spicetify-nix.homeManagerModule
     inputs.anyrun.homeManagerModules.default
     inputs.nixvim.homeManagerModules.nixvim
+    inputs.hypridle.homeManagerModules.default
     ./gtk.nix
     ./vscode.nix
     ./obs.nix

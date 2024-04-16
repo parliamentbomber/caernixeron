@@ -1,9 +1,10 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   imports = [
-    ./syncthing.nix
     ./cli
-    ./firefox.nix
+    ./services
+    ./browsers
     ./discord.nix
+    ./alacritty
   ];
   home.packages = with pkgs; [
     overskride

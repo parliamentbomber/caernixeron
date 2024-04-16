@@ -40,7 +40,6 @@
     height = 1080;
     x = 0;
     workspace = "1";
-    enabled = false;
   }];
 
   # swap

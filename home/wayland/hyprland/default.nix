@@ -1,7 +1,6 @@
-{
-  inputs,
-  pkgs,
-  ...
+{ inputs
+, pkgs
+, ...
 }: {
   imports = [
     ./env.nix
@@ -9,7 +8,7 @@
     ./execonce.nix
     ./rules.nix
     ./settings.nix
-    ./modules
+    ../../../modules/home-manager/monitors.nix
   ];
   wayland.windowManager.hyprland = {
     enable = true;

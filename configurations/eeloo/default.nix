@@ -1,5 +1,5 @@
 # desktop specific nixos options
-{...}: {
+{ config, ... }: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -26,6 +26,27 @@
     enableIPv6 = false;
   };
   # swap
+  monitors = [
+    {
+      name = "DP-3";
+      primary = true;
+      width = 2560;
+      height = 1440;
+      x = 0;
+      y = 0;
+      workspace = "1";
+      enabled = true;
+    }
+    {
+      name = "DP-2";
+      width = 1920;
+      height = 1080;
+      x = 2560;
+      y = 0;
+      workspace = "2";
+      enabled = true;
+    }
+  ];
   swapDevices = [
     {
       device = "/var/lib/swapfile";
