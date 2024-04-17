@@ -1,20 +1,21 @@
 {
   description = "caernixeron";
-  outputs =
-    { self
-    , nixpkgs
-    , flake-parts
-    , ...
-    } @ inputs:
-    flake-parts.lib.mkFlake { inherit inputs self; } ({ withSystem, ... }: {
+  outputs = {
+    self,
+    nixpkgs,
+    flake-parts,
+    ...
+  } @ inputs:
+    flake-parts.lib.mkFlake {inherit inputs self;} ({withSystem, ...}: {
       systems = [
         "x86_64-linux"
       ];
 
       imports = [
         ./precommit.nix
+        ./modules
         {
-          config._module.args._inputs = inputs // { inherit (inputs) self; };
+          config._module.args._inputs = inputs // {inherit (inputs) self;};
         }
 
         inputs.flake-parts.flakeModules.easyOverlay
@@ -22,39 +23,39 @@
         inputs.treefmt-nix.flakeModule
       ];
 
-      perSystem =
-        { inputs
-        , config
-        , pkgs
-        , ...
-        }: {
-          # provide the formatter for nix fmt
-          formatter = pkgs.alejandra;
+      perSystem = {
+        inputs,
+        config,
+        pkgs,
+        ...
+      }: {
+        # provide the formatter for nix fmt
+        formatter = pkgs.alejandra;
 
-          pre-commit = {
-            settings.excludes = [ "flake.lock" ];
+        pre-commit = {
+          settings.excludes = ["flake.lock"];
 
-            settings.hooks = {
-              alejandra.enable = true;
-              prettier.enable = true;
-            };
+          settings.hooks = {
+            alejandra.enable = true;
+            prettier.enable = true;
           };
-          # configure treefmt
-          treefmt = {
-            projectRootFile = "flake.nix";
+        };
+        # configure treefmt
+        treefmt = {
+          projectRootFile = "flake.nix";
 
-            programs = {
-              alejandra.enable = true;
-              black.enable = true;
-              deadnix.enable = false;
-              shellcheck.enable = true;
-              shfmt = {
-                enable = true;
-                indent_size = 4;
-              };
+          programs = {
+            alejandra.enable = true;
+            black.enable = true;
+            deadnix.enable = false;
+            shellcheck.enable = true;
+            shfmt = {
+              enable = true;
+              indent_size = 4;
             };
           };
         };
+      };
 
       flake = {
         nixosConfigurations = import ./configurations inputs;

@@ -1,5 +1,5 @@
 # desktop specific nixos options
-{ config, ... }: {
+{config, ...}: {
   imports = [
     ./hardware-configuration.nix
   ];

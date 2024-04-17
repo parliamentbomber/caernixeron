@@ -1,4 +1,4 @@
-{ config, ... }: {
+{config, ...}: {
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [
       "float, class:^(imv)$"
@@ -8,13 +8,11 @@
       "stayfocused, title:^()$,class:^(steam)$"
       "minsize 1 1, title:^()$,class:^(steam)$"
     ];
-    layerrule =
-      let
-        layers = "^(anyrun|gtk-layer-shell)$";
-      in
-      [
-        "blur, ${layers}"
-        "ignorealpha 0.2, ${layers}"
-      ];
+    layerrule = let
+      layers = "^(anyrun|gtk-layer-shell)$";
+    in [
+      "blur, ${layers}"
+      "ignorealpha 0.2, ${layers}"
+    ];
   };
 }

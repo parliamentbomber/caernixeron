@@ -1,5 +1,5 @@
 # laptop specific nixos options
-{ ... }: {
+{ self, inputs,... }: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -33,16 +33,28 @@
     SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
   };
   hardware.bluetooth.enable = true;
-  monitors = [{
-    primary = true;
-    name = "eDP-1";
-    width = 1920;
-    height = 1080;
-    x = 0;
-    workspace = "1";
-  }];
+  monitors = [
+    {
+      primary = true;
+      name = "eDP-1";
+      width = 1920;
+      height = 1080;
+      x = 0;
+      workspace = "1";
+    }
+  ];
 
-  # swap
+  home-manager = {
+    useUserPackages = true;
+    useGlobalPkgs = true;
+    extraSpecialArgs = {
+      inherit inputs;
+      inherit self;
+    };
+    users.nixer = {
+      imports = [ ../../home/minmus.nix ];
+    };
+  };
   swapDevices = [
     {
       device = "/var/lib/swapfile";

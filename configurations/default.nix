@@ -26,9 +26,6 @@ let
       inherit inputs;
       inherit self;
     };
-    users.nixer = {
-      imports = [ ../home ];
-    };
   };
 in
 {

@@ -1,11 +1,10 @@
-{ lib
-, config
-, ...
-}:
-let
-  inherit (lib) mkOption types;
-in
 {
+  lib,
+  config,
+  ...
+}: let
+  inherit (lib) mkOption types;
+in {
   options.monitors = mkOption {
     type = types.listOf (
       types.submodule {
@@ -49,7 +48,7 @@ in
         };
       }
     );
-    default = [ ];
+    default = [];
   };
   config = {
     assertions = [
