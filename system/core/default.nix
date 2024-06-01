@@ -10,5 +10,6 @@
     ./../nix
     ./../networking
     ../../modules/home-manager
+    ../programs/wayland
   ];
 }

@@ -6,10 +6,12 @@
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
-    plugins = [
-      inputs.hyprspace.packages.${pkgs.system}.Hyprspace
-    ];
+    plugins = [ inputs.hyprspace.packages.${pkgs.system}.Hyprspace ];
     extraConfig = ''
+    
+monitor=DP-3,2560x1440@144,0x0,1
+monitor=DP-2,1920x1080@165,2560x0,1
+
       animations {
         enabled = yes
 
@@ -26,21 +28,9 @@
       }
     '';
     settings = {
-      monitor =
-        map
-          (
-            m:
-            let
-              resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
-              position = "${toString m.x}x${toString m.y}";
-            in
-            "${m.name},${
-            if m.enabled
-            then "${resolution},${position},1"
-            else "disable"
-          }"
-          )
-          (config.monitors);
+      debug = {
+        disable_logs = false;
+      };
       general = {
         resize_on_border = true;
         hover_icon_on_border = false;

@@ -1,5 +1,5 @@
 # desktop specific nixos options
-{config, ...}: {
+{ inputs, self, config, ... }: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -53,6 +53,19 @@
       size = 8 * 1024;
     }
   ];
+  home-manager = {
+    extraSpecialArgs =
+      let
+        monitors = config.monitors;
+      in
+      {
+        inherit inputs;
+        inherit self;
+      };
+    users.nixer = {
+      imports = [ ../../home ];
+    };
+  };
 
   # env variables
   # you probably shouldn't change this, but if you want to please read the documentation first

@@ -1,11 +1,8 @@
-{inputs, ...}: {
-  imports = [
-    inputs.nh.nixosModules.default
-  ];
-
+{ inputs, pkgs, ... }: {
   # nh default flake
   environment.variables.FLAKE = "/home/nixer/caernixeron";
-  nh = {
+  programs.nh = {
+    package = inputs.nh.packages.${pkgs.system}.default;
     enable = true;
     clean = {
       enable = true;

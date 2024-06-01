@@ -14,7 +14,6 @@ let
   printing = ../system/printing;
   server = ../system/server;
   hardware = ../system/hardware;
-  wayland = ../system/wayland;
   homeManager = inputs.home-manager.nixosModules.home-manager;
 
   shared = [ core hardware ];
@@ -37,7 +36,6 @@ in
         ./eeloo
         nvidia
         secureboot
-        wayland
         homeManager
         gaming
         tailscale
@@ -46,7 +44,7 @@ in
         { inherit home-manager; }
       ]
       ++ shared;
-    specialArgs = { inherit inputs; };
+    specialArgs = { inherit inputs self; };
   };
 
   minmus = nixpkgs.lib.nixosSystem {
@@ -56,7 +54,6 @@ in
         { networking.hostName = "minmus"; }
         ./minmus
         ../system/services
-        wayland
         homeManager
         gamedev
         tailscale
@@ -65,6 +62,6 @@ in
         { inherit home-manager; }
       ]
       ++ shared;
-    specialArgs = { inherit inputs; };
+    specialArgs = { inherit inputs self; };
   };
 }

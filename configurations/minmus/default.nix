@@ -1,5 +1,5 @@
 # laptop specific nixos options
-{ self, inputs,... }: {
+{ self, inputs, ... }: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -45,14 +45,8 @@
   ];
 
   home-manager = {
-    useUserPackages = true;
-    useGlobalPkgs = true;
-    extraSpecialArgs = {
-      inherit inputs;
-      inherit self;
-    };
     users.nixer = {
-      imports = [ ../../home/minmus.nix ];
+      imports = [ ../../home ];
     };
   };
   swapDevices = [

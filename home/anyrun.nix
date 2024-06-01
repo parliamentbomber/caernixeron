@@ -1,8 +1,7 @@
-{
-  pkgs,
-  inputs,
-  osConfig,
-  ...
+{ pkgs
+, inputs
+, osConfig
+, ...
 }: {
   programs.anyrun = {
     enable = true;
@@ -17,7 +16,6 @@
         stdin
         randr
         dictionary
-        inputs.anyrun-nixos-options.packages.${pkgs.system}.default
       ];
 
       width.fraction = 0.3;
@@ -26,19 +24,6 @@
       closeOnClick = true;
       maxEntries = 7;
     };
-    extraConfigFiles."nixos-options.ron".text = let
-      nixos-options = osConfig.system.build.manual.optionsJSON + "/share/doc/nixos/options.json";
-      hm-options = inputs.home-manager.packages.${pkgs.system}.docs-json + "/share/doc/home-manager/options.json";
-      options = builtins.toJSON {
-        ":nix" = [nixos-options];
-        ":home" = [hm-options];
-        ":nall" = [nixos-options hm-options];
-      };
-    in ''
-      Config(
-          options: ${options},
-      )
-    '';
     extraCss = ''
       * {
         transition: 200ms ease;

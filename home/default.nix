@@ -1,14 +1,12 @@
-{
-  config,
-  inputs,
-  pkgs,
-  ...
+{ config
+, inputs
+, pkgs
+, ...
 }: {
   imports = [
     inputs.spicetify-nix.homeManagerModule
     inputs.anyrun.homeManagerModules.default
     inputs.nixvim.homeManagerModules.nixvim
-    inputs.hypridle.homeManagerModules.default
     ../modules/home-manager
     ./gtk.nix
     ./vscode.nix

@@ -1,18 +1,17 @@
-{
-  pkgs,
-  config,
-  inputs,
-  lib,
-  ...
+{ pkgs
+, config
+, inputs
+, lib
+, ...
 }: {
   imports = [
     inputs.lanzaboote.nixosModules.lanzaboote
   ];
   boot = {
     kernelPackages = pkgs.pkgs.linuxPackages_latest;
-    kernelModules = ["kvm-intel"];
-
-    supportedFilesystems = ["ntfs"];
+    kernelModules = [ "kvm-intel" ];
+    kernelParams = [ "nvidia-drm.fbdev=1" ];
+    supportedFilesystems = [ "ntfs" ];
     loader = {
       timeout = 15;
       systemd-boot = {
