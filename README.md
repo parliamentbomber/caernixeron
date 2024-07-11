@@ -1,4 +1,4 @@
-# caernixeron
+# caernixeron - ARCHIVED NEW CONFIG AT CAERNARFERON/PARLBOMB
 
 my personal configuration thing flake and stuff
 
